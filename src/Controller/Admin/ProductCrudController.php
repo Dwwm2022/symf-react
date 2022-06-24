@@ -23,11 +23,12 @@ class ProductCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->onlyOnIndex(),
-            TextField::new('linelle'),
-            MoneyField::new('price')->setCurrency('EUR'),
+            TextField::new('libelle', 'Libellé'),
+            MoneyField::new('price', 'Prix')->setCurrency('EUR'),
+            DateTimeField::new('createdAt', 'Créé le')->setFormat('dd-MM-Y HH:mm')->renderAsText(),
             //DateTimeField::new('createdAt')->renderAsText(),
-            TextEditorField::new('description'),
-            AssociationField::new('category')
+            TextEditorField::new('description', 'Description'),
+            AssociationField::new('category', 'La catégorie')
             
         ];
     }

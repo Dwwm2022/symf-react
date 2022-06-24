@@ -20,8 +20,8 @@ class DashboardController extends AbstractDashboardController
         //return parent::index();
         $routeBuilder = $this->container->get(AdminUrlGenerator::class);
         $url = $routeBuilder->setController(CategoryCrudController::class, ProductCrudController::class, UserCrudController::class)->generateUrl();
-       //return $this->redirect($url);
-       return $this->render('bundles/EasyAdminBundle/page/home.html.twig');
+        return $this->redirect($url);
+      // return $this->render('bundles/EasyAdminBundle/page/home.html.twig');
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
